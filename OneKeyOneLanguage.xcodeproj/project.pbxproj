@@ -1,0 +1,301 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DFE13A9015B66F5F009C6749 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFE13A8F15B66F5F009C6749 /* Cocoa.framework */; };
+		DFE13A9A15B66F5F009C6749 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DFE13A9815B66F5F009C6749 /* InfoPlist.strings */; };
+		DFE13A9C15B66F5F009C6749 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DFE13A9B15B66F5F009C6749 /* main.m */; };
+		DFE13AA015B66F5F009C6749 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = DFE13A9E15B66F5F009C6749 /* Credits.rtf */; };
+		DFE13AA315B66F5F009C6749 /* S3AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DFE13AA215B66F5F009C6749 /* S3AppDelegate.m */; };
+		DFE13AA615B66F5F009C6749 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFE13AA415B66F5F009C6749 /* MainMenu.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		DFE13A8B15B66F5F009C6749 /* OneKeyOneLanguage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OneKeyOneLanguage.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DFE13A8F15B66F5F009C6749 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		DFE13A9215B66F5F009C6749 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		DFE13A9315B66F5F009C6749 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		DFE13A9415B66F5F009C6749 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		DFE13A9715B66F5F009C6749 /* OneKeyOneLanguage-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "OneKeyOneLanguage-Info.plist"; sourceTree = "<group>"; };
+		DFE13A9915B66F5F009C6749 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		DFE13A9B15B66F5F009C6749 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DFE13A9D15B66F5F009C6749 /* OneKeyOneLanguage-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OneKeyOneLanguage-Prefix.pch"; sourceTree = "<group>"; };
+		DFE13A9F15B66F5F009C6749 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		DFE13AA115B66F5F009C6749 /* S3AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = S3AppDelegate.h; sourceTree = "<group>"; };
+		DFE13AA215B66F5F009C6749 /* S3AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = S3AppDelegate.m; sourceTree = "<group>"; };
+		DFE13AA515B66F5F009C6749 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DFE13A8815B66F5F009C6749 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DFE13A9015B66F5F009C6749 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DFE13A8015B66F5F009C6749 = {
+			isa = PBXGroup;
+			children = (
+				DFE13A9515B66F5F009C6749 /* OneKeyOneLanguage */,
+				DFE13A8E15B66F5F009C6749 /* Frameworks */,
+				DFE13A8C15B66F5F009C6749 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DFE13A8C15B66F5F009C6749 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DFE13A8B15B66F5F009C6749 /* OneKeyOneLanguage.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DFE13A8E15B66F5F009C6749 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DFE13A8F15B66F5F009C6749 /* Cocoa.framework */,
+				DFE13A9115B66F5F009C6749 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DFE13A9115B66F5F009C6749 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DFE13A9215B66F5F009C6749 /* AppKit.framework */,
+				DFE13A9315B66F5F009C6749 /* CoreData.framework */,
+				DFE13A9415B66F5F009C6749 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		DFE13A9515B66F5F009C6749 /* OneKeyOneLanguage */ = {
+			isa = PBXGroup;
+			children = (
+				DFE13AA115B66F5F009C6749 /* S3AppDelegate.h */,
+				DFE13AA215B66F5F009C6749 /* S3AppDelegate.m */,
+				DFE13AA415B66F5F009C6749 /* MainMenu.xib */,
+				DFE13A9615B66F5F009C6749 /* Supporting Files */,
+			);
+			path = OneKeyOneLanguage;
+			sourceTree = "<group>";
+		};
+		DFE13A9615B66F5F009C6749 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DFE13A9715B66F5F009C6749 /* OneKeyOneLanguage-Info.plist */,
+				DFE13A9815B66F5F009C6749 /* InfoPlist.strings */,
+				DFE13A9B15B66F5F009C6749 /* main.m */,
+				DFE13A9D15B66F5F009C6749 /* OneKeyOneLanguage-Prefix.pch */,
+				DFE13A9E15B66F5F009C6749 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DFE13A8A15B66F5F009C6749 /* OneKeyOneLanguage */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DFE13AA915B66F5F009C6749 /* Build configuration list for PBXNativeTarget "OneKeyOneLanguage" */;
+			buildPhases = (
+				DFE13A8715B66F5F009C6749 /* Sources */,
+				DFE13A8815B66F5F009C6749 /* Frameworks */,
+				DFE13A8915B66F5F009C6749 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OneKeyOneLanguage;
+			productName = OneKeyOneLanguage;
+			productReference = DFE13A8B15B66F5F009C6749 /* OneKeyOneLanguage.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DFE13A8215B66F5F009C6749 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = S3;
+				LastUpgradeCheck = 0440;
+				ORGANIZATIONNAME = "Sun, Sea and Sky Factory";
+			};
+			buildConfigurationList = DFE13A8515B66F5F009C6749 /* Build configuration list for PBXProject "OneKeyOneLanguage" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = DFE13A8015B66F5F009C6749;
+			productRefGroup = DFE13A8C15B66F5F009C6749 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DFE13A8A15B66F5F009C6749 /* OneKeyOneLanguage */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DFE13A8915B66F5F009C6749 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DFE13A9A15B66F5F009C6749 /* InfoPlist.strings in Resources */,
+				DFE13AA015B66F5F009C6749 /* Credits.rtf in Resources */,
+				DFE13AA615B66F5F009C6749 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DFE13A8715B66F5F009C6749 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DFE13A9C15B66F5F009C6749 /* main.m in Sources */,
+				DFE13AA315B66F5F009C6749 /* S3AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		DFE13A9815B66F5F009C6749 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DFE13A9915B66F5F009C6749 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		DFE13A9E15B66F5F009C6749 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DFE13A9F15B66F5F009C6749 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		DFE13AA415B66F5F009C6749 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DFE13AA515B66F5F009C6749 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DFE13AA715B66F5F009C6749 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		DFE13AA815B66F5F009C6749 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		DFE13AAA15B66F5F009C6749 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "OneKeyOneLanguage/OneKeyOneLanguage-Prefix.pch";
+				INFOPLIST_FILE = "OneKeyOneLanguage/OneKeyOneLanguage-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		DFE13AAB15B66F5F009C6749 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "OneKeyOneLanguage/OneKeyOneLanguage-Prefix.pch";
+				INFOPLIST_FILE = "OneKeyOneLanguage/OneKeyOneLanguage-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DFE13A8515B66F5F009C6749 /* Build configuration list for PBXProject "OneKeyOneLanguage" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DFE13AA715B66F5F009C6749 /* Debug */,
+				DFE13AA815B66F5F009C6749 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DFE13AA915B66F5F009C6749 /* Build configuration list for PBXNativeTarget "OneKeyOneLanguage" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DFE13AAA15B66F5F009C6749 /* Debug */,
+				DFE13AAB15B66F5F009C6749 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DFE13A8215B66F5F009C6749 /* Project object */;
+}
