@@ -7,9 +7,17 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import <Carbon/Carbon.h>
+#import "ShortcutRecorder.h"
 
 @interface S3AppDelegate : NSObject <NSApplicationDelegate>
 
-@property (assign) IBOutlet NSWindow *window;
+@property (weak) IBOutlet NSWindow *window;
+@property (weak) IBOutlet SRRecorderControl *shortcutRecorder;
+@property (weak) IBOutlet NSMenu *inputSourceMenu;
+
+- (IBAction)selectInputLanguage:(id)sender;
+
+static OSStatus hotKeyEventHandler(EventHandlerCallRef inHandlerRef, EventRef event, void* refCon );
 
 @end
