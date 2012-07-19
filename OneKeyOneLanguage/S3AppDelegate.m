@@ -7,10 +7,12 @@
 //
 
 #import "S3AppDelegate.h"
+#import "S3InputMenuManager.h"
 
 @implementation S3AppDelegate {
     NSArray * inputSources;
     EventHotKeyID hotKeyID;
+    S3InputMenuManager * inputMenuManager;
 }
 
 @synthesize shortcutRecorder;
@@ -19,16 +21,19 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     [[self shortcutRecorder] setDelegate:self];
     [[self shortcutRecorder] setCanCaptureGlobalHotKeys:YES];
-    inputSources = CFBridgingRelease(TISCreateInputSourceList(NULL, TRUE));
+    /*inputSources = CFBridgingRelease(TISCreateInputSourceList(NULL, TRUE));
     for (int i=0; i<[inputSources count]; ++i) {
         TISInputSourceRef nextInputSource = (__bridge TISInputSourceRef)([inputSources objectAtIndex:i]);
         NSString * inputSourceName = CFBridgingRelease(TISGetInputSourceProperty(nextInputSource, kTISPropertyLocalizedName));
         NSMenuItem * nextMenuItem = [[NSMenuItem alloc] initWithTitle:inputSourceName action:@selector(selectInputSource:) keyEquivalent:@""];
         [nextMenuItem setTag:i];
         [inputSourceMenu addItem:nextMenuItem];
-    }
+    }*/
     hotKeyID.id = 1;
     hotKeyID.signature = 'OKOL';
+    
+    inputMenuManager = [[S3InputMenuManager alloc] init];
+    [inputSourceMenu setDelegate:inputMenuManager];
 }
 
 - (BOOL)shortcutRecorder:(SRRecorderControl *)aRecorder isKeyCode:(NSInteger)keyCode andFlagsTaken:(NSUInteger)flags reason:(NSString **)aReason {
