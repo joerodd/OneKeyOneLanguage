@@ -22,6 +22,7 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     [[self shortcutRecorder] setDelegate:self];
     [[self shortcutRecorder] setCanCaptureGlobalHotKeys:YES];
+    [[self shortcutRecorder] setAllowsKeyOnly:YES escapeKeysRecord:NO];
     hotKeyID.id = 1;
     hotKeyID.signature = 'OKOL';
     
