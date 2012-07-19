@@ -16,6 +16,7 @@
 
 @synthesize shortcutRecorder;
 @synthesize inputSourceMenu;
+@synthesize selectedInputSourceButton;
 @synthesize window;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
@@ -48,7 +49,7 @@
 -(void) methodSelected:(id)sender {
     TISInputSourceRef inputSource = (__bridge TISInputSourceRef)([sender representedObject]);
     NSString * methodName = (__bridge NSString *)(TISGetInputSourceProperty(inputSource, kTISPropertyLocalizedName));
-    NSLog(@"Method selected: %@",methodName);
+    [selectedInputSourceButton setTitle:methodName];
 }
 
 @end
