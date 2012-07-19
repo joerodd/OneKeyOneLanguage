@@ -7,7 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <Carbon/Carbon.h>
+
+@protocol S3InputMenuSelectionDelegate <NSObject>
+
+@required
+
+-(void) methodSelected:(id)sender;
+
+@end
 
 @interface S3InputMenuManager : NSObject <NSMenuDelegate>
+
+@property (strong, readwrite) NSObject <S3InputMenuSelectionDelegate> * delegate;
 
 @end

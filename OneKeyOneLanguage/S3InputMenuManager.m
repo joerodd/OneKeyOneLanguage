@@ -9,65 +9,61 @@
 #import "S3InputMenuManager.h"
 #import <Carbon/Carbon.h>
 
+const NSUInteger kS3InputMenuManagerNumberOfSubmenus = 3;
+
 @implementation S3InputMenuManager {
-    NSArray * sourcesCompatibleWithASCII;
+    NSArray * allInputSources;
 }
+
+@synthesize delegate;
 
 - (id)init {
     self = [super init];
     if (self) {
-        sourcesCompatibleWithASCII = [NSMutableArray array];
-        NSArray * allInputSources = CFBridgingRelease(TISCreateInputSourceList(NULL, TRUE));
-        NSMutableArray * workingArray = [NSMutableArray array];
-        for (int i=0; i<[allInputSources count]; ++i) {
-            TISInputSourceRef nextInputSource = (__bridge TISInputSourceRef)([allInputSources objectAtIndex:i]);
-            NSNumber * isASCIICompatible = CFBridgingRelease(TISGetInputSourceProperty(nextInputSource, kTISPropertyInputSourceIsASCIICapable));
-            if ([isASCIICompatible boolValue]) {
-                [workingArray addObject:(__bridge id)(nextInputSource)];
-            }
-            else {
-                NSString * incompatibleInputSourceName = CFBridgingRelease(TISGetInputSourceProperty(nextInputSource, kTISPropertyLocalizedName));
-                NSLog(@"Didn't add: %@",incompatibleInputSourceName);
+        CFArrayRef cfInputList = TISCreateInputSourceList(NULL, FALSE);
+        NSMutableArray * workingInputSourceList = [NSMutableArray array];
+        for (int i = 0; i < CFArrayGetCount(cfInputList); ++i) {
+            TISInputSourceRef nextInputSource = (TISInputSourceRef)CFArrayGetValueAtIndex(cfInputList, i);
+            NSString * inputSourceName = (__bridge NSString *)(TISGetInputSourceProperty(nextInputSource, kTISPropertyLocalizedName));
+            if ([inputSourceName rangeOfString:@"com.apple."].length == 0) {
+                [workingInputSourceList addObject:(__bridge id)(nextInputSource)];
             }
         }
-        sourcesCompatibleWithASCII = [workingArray copy];
+        allInputSources = [workingInputSourceList copy];
+        CFRelease(cfInputList);
     }
     return self;
 }
-/*
-- (void)menuNeedsUpdate:(NSMenu*)menu {
-    for (int i = 0; i < [sourcesCompatibleWithASCII count]; ++i) {
-        NSMenuItem * nextMenuItem
-    }
-}*/
 
 - (NSInteger)numberOfItemsInMenu:(NSMenu*)menu {
-    return [sourcesCompatibleWithASCII count];
+    return [allInputSources count];
 }
 
 - (BOOL)menu:(NSMenu*)menu updateItem:(NSMenuItem*)item atIndex:(NSInteger)index shouldCancel:(BOOL)shouldCancel {
-    TISInputSourceRef inputSource = (__bridge TISInputSourceRef)([sourcesCompatibleWithASCII objectAtIndex:index]);
+    TISInputSourceRef inputSource = (__bridge TISInputSourceRef)([allInputSources objectAtIndex:index]);
     NSString * nameOfInputSource = CFBridgingRelease(TISGetInputSourceProperty(inputSource, kTISPropertyLocalizedName));
     [item setTitle:nameOfInputSource];
+    [item setAction:@selector(methodSelected:)];
+    [item setRepresentedObject:(__bridge id)inputSource];
     return YES;
 }
 
 /* indicates that the menu is being opened (displayed) or closed (hidden).  Do not modify the structure of the menu or the menu items from within these callbacks. */
-- (void)menuWillOpen:(NSMenu *)menu NS_AVAILABLE_MAC(10_5) {
+- (void)menuWillOpen:(NSMenu *)menu {
 }
-- (void)menuDidClose:(NSMenu *)menu NS_AVAILABLE_MAC(10_5) {
+- (void)menuDidClose:(NSMenu *)menu {
     
 }
 
 /* Indicates that menu is about to highlight item.  Only one item per menu can be highlighted at a time.  If item is nil, it means all items in the menu are about to be unhighlighted. */
-- (void)menu:(NSMenu *)menu willHighlightItem:(NSMenuItem *)item NS_AVAILABLE_MAC(10_5) {
+- (void)menu:(NSMenu *)menu willHighlightItem:(NSMenuItem *)item {
     
 }
 
 
 /* Given a menu that is about to be opened on the given screen, return a rect, in screen coordinates, within which the menu will be positioned.  If you return NSZeroRect, or if the delegate does not implement this method, the menu will be confined to the bounds appropriate for the given screen.  The returned rect may not be honored in all cases, such as if it would force the menu to be too small.
  */
-- (NSRect)confinementRectForMenu:(NSMenu *)menu onScreen:(NSScreen *)screen NS_AVAILABLE_MAC(10_6) {
+- (NSRect)confinementRectForMenu:(NSMenu *)menu onScreen:(NSScreen *)screen {
     return NSZeroRect;
 }
 

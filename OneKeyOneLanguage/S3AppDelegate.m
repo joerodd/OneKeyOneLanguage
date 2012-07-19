@@ -7,7 +7,6 @@
 //
 
 #import "S3AppDelegate.h"
-#import "S3InputMenuManager.h"
 
 @implementation S3AppDelegate {
     NSArray * inputSources;
@@ -17,18 +16,11 @@
 
 @synthesize shortcutRecorder;
 @synthesize inputSourceMenu;
+@synthesize window;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     [[self shortcutRecorder] setDelegate:self];
     [[self shortcutRecorder] setCanCaptureGlobalHotKeys:YES];
-    /*inputSources = CFBridgingRelease(TISCreateInputSourceList(NULL, TRUE));
-    for (int i=0; i<[inputSources count]; ++i) {
-        TISInputSourceRef nextInputSource = (__bridge TISInputSourceRef)([inputSources objectAtIndex:i]);
-        NSString * inputSourceName = CFBridgingRelease(TISGetInputSourceProperty(nextInputSource, kTISPropertyLocalizedName));
-        NSMenuItem * nextMenuItem = [[NSMenuItem alloc] initWithTitle:inputSourceName action:@selector(selectInputSource:) keyEquivalent:@""];
-        [nextMenuItem setTag:i];
-        [inputSourceMenu addItem:nextMenuItem];
-    }*/
     hotKeyID.id = 1;
     hotKeyID.signature = 'OKOL';
     
@@ -44,13 +36,19 @@
 }
 
 - (IBAction)selectInputLanguage:(id)sender {
-    [inputSourceMenu popUpMenuPositioningItem:nil atLocation:NSZeroPoint inView:nil];
+    [inputSourceMenu popUpMenuPositioningItem:nil atLocation:NSZeroPoint inView:(NSView*)sender];
 }
 
 -(void)selectInputSource:(id)sender {
     NSLog(@"Selected: %@", sender);
     TISInputSourceRef selectedInputSource = (__bridge TISInputSourceRef)([inputSources objectAtIndex:[sender tag]]);
     TISSelectInputSource(selectedInputSource);
+}
+
+-(void) methodSelected:(id)sender {
+    TISInputSourceRef inputSource = (__bridge TISInputSourceRef)([sender representedObject]);
+    NSString * methodName = (__bridge NSString *)(TISGetInputSourceProperty(inputSource, kTISPropertyLocalizedName));
+    NSLog(@"Method selected: %@",methodName);
 }
 
 @end

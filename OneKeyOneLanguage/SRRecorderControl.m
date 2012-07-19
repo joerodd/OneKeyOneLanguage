@@ -309,7 +309,7 @@
 	return SRCocoaToCarbonFlags( cocoaFlags );
 }
 
-- (NSUInteger)carbonToCocoaFlags:(NSUInteger)carbonFlags;
+- (NSUInteger)carbonToCocoaFlags:(NSUInteger)carbonFlags
 {
 	return SRCarbonToCocoaFlags( carbonFlags );
 }

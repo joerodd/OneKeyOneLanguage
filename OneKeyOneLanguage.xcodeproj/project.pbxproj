@@ -12,11 +12,11 @@
 		DF7D840E15B6867500F4BE3D /* SRRemoveShortcutPressed.tif in Resources */ = {isa = PBXBuildFile; fileRef = DF7D840A15B6867500F4BE3D /* SRRemoveShortcutPressed.tif */; };
 		DF7D840F15B6867500F4BE3D /* SRRemoveShortcutRollover.tif in Resources */ = {isa = PBXBuildFile; fileRef = DF7D840B15B6867500F4BE3D /* SRRemoveShortcutRollover.tif */; };
 		DF7D841015B6867500F4BE3D /* SRSnapback.tiff in Resources */ = {isa = PBXBuildFile; fileRef = DF7D840C15B6867500F4BE3D /* SRSnapback.tiff */; };
-		DF7D841D15B6869200F4BE3D /* SRCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = DF7D841415B6869200F4BE3D /* SRCommon.m */; };
-		DF7D841E15B6869200F4BE3D /* SRKeyCodeTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = DF7D841615B6869200F4BE3D /* SRKeyCodeTransformer.m */; };
-		DF7D841F15B6869200F4BE3D /* SRRecorderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DF7D841815B6869200F4BE3D /* SRRecorderCell.m */; };
-		DF7D842015B6869200F4BE3D /* SRRecorderControl.m in Sources */ = {isa = PBXBuildFile; fileRef = DF7D841A15B6869200F4BE3D /* SRRecorderControl.m */; };
-		DF7D842115B6869200F4BE3D /* SRValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = DF7D841C15B6869200F4BE3D /* SRValidator.m */; };
+		DF7D841D15B6869200F4BE3D /* SRCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = DF7D841415B6869200F4BE3D /* SRCommon.m */; settings = {COMPILER_FLAGS = "-w"; }; };
+		DF7D841E15B6869200F4BE3D /* SRKeyCodeTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = DF7D841615B6869200F4BE3D /* SRKeyCodeTransformer.m */; settings = {COMPILER_FLAGS = "-w"; }; };
+		DF7D841F15B6869200F4BE3D /* SRRecorderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DF7D841815B6869200F4BE3D /* SRRecorderCell.m */; settings = {COMPILER_FLAGS = "-w"; }; };
+		DF7D842015B6869200F4BE3D /* SRRecorderControl.m in Sources */ = {isa = PBXBuildFile; fileRef = DF7D841A15B6869200F4BE3D /* SRRecorderControl.m */; settings = {COMPILER_FLAGS = "-w"; }; };
+		DF7D842115B6869200F4BE3D /* SRValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = DF7D841C15B6869200F4BE3D /* SRValidator.m */; settings = {COMPILER_FLAGS = "-w"; }; };
 		DFE13A9015B66F5F009C6749 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFE13A8F15B66F5F009C6749 /* Cocoa.framework */; };
 		DFE13A9A15B66F5F009C6749 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DFE13A9815B66F5F009C6749 /* InfoPlist.strings */; };
 		DFE13A9C15B66F5F009C6749 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DFE13A9B15B66F5F009C6749 /* main.m */; };
@@ -338,6 +338,7 @@
 				GCC_PREFIX_HEADER = "OneKeyOneLanguage/OneKeyOneLanguage-Prefix.pch";
 				INFOPLIST_FILE = "OneKeyOneLanguage/OneKeyOneLanguage-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				WARNING_CFLAGS = "-Weverything";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -355,6 +356,7 @@
 				GCC_PREFIX_HEADER = "OneKeyOneLanguage/OneKeyOneLanguage-Prefix.pch";
 				INFOPLIST_FILE = "OneKeyOneLanguage/OneKeyOneLanguage-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				WARNING_CFLAGS = "-Weverything";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

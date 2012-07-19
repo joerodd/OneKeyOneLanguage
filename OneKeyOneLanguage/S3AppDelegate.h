@@ -9,8 +9,9 @@
 #import <Cocoa/Cocoa.h>
 #import <Carbon/Carbon.h>
 #import "ShortcutRecorder.h"
+#import "S3InputMenuManager.h"
 
-@interface S3AppDelegate : NSObject <NSApplicationDelegate>
+@interface S3AppDelegate : NSObject <NSApplicationDelegate, S3InputMenuSelectionDelegate>
 
 @property (weak) IBOutlet NSWindow *window;
 @property (weak) IBOutlet SRRecorderControl *shortcutRecorder;
