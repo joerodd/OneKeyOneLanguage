@@ -31,6 +31,10 @@
     hotkeyRegistration = [[S3HotkeyRegistration alloc] init];
 }
 
+- (void)applicationDidBecomeActive:(NSNotification *)notification {
+    [[self window] makeKeyAndOrderFront:nil];
+}
+
 - (BOOL)shortcutRecorder:(SRRecorderControl *)aRecorder isKeyCode:(NSInteger)keyCode andFlagsTaken:(NSUInteger)flags reason:(NSString **)aReason {
     return NO;
 }
