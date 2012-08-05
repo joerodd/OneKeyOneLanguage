@@ -36,6 +36,7 @@
 }
 
 - (void)shortcutRecorder:(SRRecorderControl *)aRecorder keyComboDidChange:(KeyCombo)newKeyCombo {
+    [S3HotkeyRegistration registerHotkey:newKeyCombo withSelector:@selector(selectInputLanguage:)];
 }
 
 - (IBAction)selectInputLanguage:(id)sender {
