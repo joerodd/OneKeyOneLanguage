@@ -10,7 +10,7 @@
 
 @implementation S3HotkeyRegistration
 
--(BOOL)registerHotkey:(KeyCombo)keyCombo withSelector:(SEL)targetSelector
++(BOOL)registerHotkey:(KeyCombo)keyCombo withSelector:(SEL)targetSelector
 {
     return NO;
 }

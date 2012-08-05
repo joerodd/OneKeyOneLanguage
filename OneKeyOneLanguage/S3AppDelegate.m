@@ -7,6 +7,7 @@
 //
 
 #import "S3AppDelegate.h"
+#import "S3HotkeyRegistration.h"
 
 @implementation S3AppDelegate {
     NSArray * inputSources;

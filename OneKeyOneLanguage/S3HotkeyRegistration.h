@@ -11,6 +11,6 @@
 
 @interface S3HotkeyRegistration : NSObject
 
--(BOOL)registerHotkey:(KeyCombo)keyCombo withSelector:(SEL)targetSelector;
++(BOOL)registerHotkey:(KeyCombo)keyCombo withSelector:(SEL)targetSelector;
 
 @end
