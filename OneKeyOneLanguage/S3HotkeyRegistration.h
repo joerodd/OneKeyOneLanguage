@@ -9,8 +9,16 @@
 #import <Foundation/Foundation.h>
 #import "ShortcutRecorder.h"
 
+@protocol S3HotkeyDelegate <NSObject>
+
+-(void)hotkeyPressed;
+
+@end
+
 @interface S3HotkeyRegistration : NSObject
 
-+(BOOL)registerHotkey:(KeyCombo)keyCombo withSelector:(SEL)targetSelector;
+@property (readwrite, strong) id <S3HotkeyDelegate> delegate;
+
+-(BOOL)registerHotkey:(KeyCombo)keyCombo;
 
 @end

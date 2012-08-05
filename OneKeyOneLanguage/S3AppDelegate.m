@@ -7,12 +7,12 @@
 //
 
 #import "S3AppDelegate.h"
-#import "S3HotkeyRegistration.h"
 
 @implementation S3AppDelegate {
     NSArray * inputSources;
-    EventHotKeyID hotKeyID;
     S3InputMenuManager * inputMenuManager;
+    S3HotkeyRegistration * hotkeyRegistration;
+    TISInputSourceRef _selectedInputSource;
 }
 
 @synthesize shortcutRecorder;
@@ -24,11 +24,11 @@
     [[self shortcutRecorder] setDelegate:self];
     [[self shortcutRecorder] setCanCaptureGlobalHotKeys:YES];
     [[self shortcutRecorder] setAllowsKeyOnly:YES escapeKeysRecord:NO];
-    hotKeyID.id = 1;
-    hotKeyID.signature = 'OKOL';
     
     inputMenuManager = [[S3InputMenuManager alloc] init];
     [inputSourceMenu setDelegate:inputMenuManager];
+    
+    hotkeyRegistration = [[S3HotkeyRegistration alloc] init];
 }
 
 - (BOOL)shortcutRecorder:(SRRecorderControl *)aRecorder isKeyCode:(NSInteger)keyCode andFlagsTaken:(NSUInteger)flags reason:(NSString **)aReason {
@@ -36,23 +36,24 @@
 }
 
 - (void)shortcutRecorder:(SRRecorderControl *)aRecorder keyComboDidChange:(KeyCombo)newKeyCombo {
-    [S3HotkeyRegistration registerHotkey:newKeyCombo withSelector:@selector(selectInputLanguage:)];
+    [hotkeyRegistration setDelegate:self];
+    [hotkeyRegistration registerHotkey:newKeyCombo];
 }
 
 - (IBAction)selectInputLanguage:(id)sender {
     [inputSourceMenu popUpMenuPositioningItem:nil atLocation:NSZeroPoint inView:(NSView*)sender];
 }
 
--(void)selectInputSource:(id)sender {
-    NSLog(@"Selected: %@", sender);
-    TISInputSourceRef selectedInputSource = (__bridge TISInputSourceRef)([inputSources objectAtIndex:[sender tag]]);
-    TISSelectInputSource(selectedInputSource);
+-(void) methodSelected:(id)sender {
+    _selectedInputSource = (__bridge TISInputSourceRef)([sender representedObject]);
+    NSString * methodName = (__bridge NSString *)(TISGetInputSourceProperty(_selectedInputSource, kTISPropertyLocalizedName));
+    [selectedInputSourceButton setTitle:methodName];
 }
 
--(void) methodSelected:(id)sender {
-    TISInputSourceRef inputSource = (__bridge TISInputSourceRef)([sender representedObject]);
-    NSString * methodName = (__bridge NSString *)(TISGetInputSourceProperty(inputSource, kTISPropertyLocalizedName));
-    [selectedInputSourceButton setTitle:methodName];
+#pragma mark - S3HotkeyDelegate implementation
+
+-(void)hotkeyPressed {
+    TISSelectInputSource(_selectedInputSource);
 }
 
 @end

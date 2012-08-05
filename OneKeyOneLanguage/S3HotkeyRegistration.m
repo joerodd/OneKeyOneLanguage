@@ -8,22 +8,31 @@
 
 #import "S3HotkeyRegistration.h"
 
-//stores the single hotkey registration
-static id hotkeyRegistration = nil;
-
 //block signature typedef for handling NSEvents
 typedef void (^keypressHandler)(NSEvent*);
 
-//this block handles the NSEvent and tries to execute the given selector, if it exists
-static keypressHandler S3KeypressHandler = ^(NSEvent * event) {
-    NSLog(@"%@",event);
-};
-
 @implementation S3HotkeyRegistration
-
-+(BOOL)registerHotkey:(KeyCombo)keyCombo withSelector:(SEL)targetSelector
 {
-    hotkeyRegistration = [NSEvent addGlobalMonitorForEventsMatchingMask:NSKeyDownMask handler:S3KeypressHandler];
+    id hotkeyRegistration;
+    KeyCombo _registeredKeyCombo;
+}
+
+-(BOOL)registerHotkey:(KeyCombo)keyCombo
+{
+    _registeredKeyCombo = keyCombo;
+    keypressHandler myHandler = ^(NSEvent * event) {
+        unsigned short eventCode = [event keyCode];
+        unsigned short registeredCode = _registeredKeyCombo.code;
+        NSUInteger eventFlags = [event modifierFlags] & NSDeviceIndependentModifierFlagsMask;
+        NSUInteger registeredFlags = _registeredKeyCombo.flags;
+        if (registeredCode == eventCode) {
+            if (registeredFlags == eventFlags ||
+                (eventFlags == 0 && registeredFlags == 0)) {
+                [[self delegate] performSelector:@selector(hotkeyPressed)];
+            }
+        }
+    };
+    hotkeyRegistration = [NSEvent addGlobalMonitorForEventsMatchingMask:NSKeyDownMask handler:myHandler];
     return NO;
 }
 

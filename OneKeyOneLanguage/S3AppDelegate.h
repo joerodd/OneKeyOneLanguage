@@ -10,15 +10,14 @@
 #import <Carbon/Carbon.h>
 #import "ShortcutRecorder.h"
 #import "S3InputMenuManager.h"
+#import "S3HotkeyRegistration.h"
 
-@interface S3AppDelegate : NSObject <NSApplicationDelegate, S3InputMenuSelectionDelegate>
+@interface S3AppDelegate : NSObject <NSApplicationDelegate, S3InputMenuSelectionDelegate, S3HotkeyDelegate>
 
 @property (weak) IBOutlet NSWindow *window;
 @property (weak) IBOutlet SRRecorderControl *shortcutRecorder;
 @property (weak) IBOutlet NSMenu *inputSourceMenu;
 @property (weak) IBOutlet NSButton *selectedInputSourceButton;
-
-- (IBAction)selectInputLanguage:(id)sender;
 
 static OSStatus hotKeyEventHandler(EventHandlerCallRef inHandlerRef, EventRef event, void* refCon );
 
