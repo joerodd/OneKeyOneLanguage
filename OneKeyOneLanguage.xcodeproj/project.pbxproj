@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DF2BBF3315B7C0F800A1E1C0 /* S3InputMenuManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2BBF3215B7C0F800A1E1C0 /* S3InputMenuManager.m */; };
+		DF6333F215CE01B40067DB88 /* S3HotkeyRegistration.m in Sources */ = {isa = PBXBuildFile; fileRef = DF6333F115CE01B40067DB88 /* S3HotkeyRegistration.m */; };
 		DF7D840D15B6867500F4BE3D /* SRRemoveShortcut.tif in Resources */ = {isa = PBXBuildFile; fileRef = DF7D840915B6867500F4BE3D /* SRRemoveShortcut.tif */; };
 		DF7D840E15B6867500F4BE3D /* SRRemoveShortcutPressed.tif in Resources */ = {isa = PBXBuildFile; fileRef = DF7D840A15B6867500F4BE3D /* SRRemoveShortcutPressed.tif */; };
 		DF7D840F15B6867500F4BE3D /* SRRemoveShortcutRollover.tif in Resources */ = {isa = PBXBuildFile; fileRef = DF7D840B15B6867500F4BE3D /* SRRemoveShortcutRollover.tif */; };
@@ -29,6 +30,8 @@
 /* Begin PBXFileReference section */
 		DF2BBF3115B7C0F800A1E1C0 /* S3InputMenuManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = S3InputMenuManager.h; sourceTree = "<group>"; };
 		DF2BBF3215B7C0F800A1E1C0 /* S3InputMenuManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = S3InputMenuManager.m; sourceTree = "<group>"; };
+		DF6333F015CE01B40067DB88 /* S3HotkeyRegistration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = S3HotkeyRegistration.h; sourceTree = "<group>"; };
+		DF6333F115CE01B40067DB88 /* S3HotkeyRegistration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = S3HotkeyRegistration.m; sourceTree = "<group>"; };
 		DF7D840915B6867500F4BE3D /* SRRemoveShortcut.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = SRRemoveShortcut.tif; sourceTree = "<group>"; };
 		DF7D840A15B6867500F4BE3D /* SRRemoveShortcutPressed.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = SRRemoveShortcutPressed.tif; sourceTree = "<group>"; };
 		DF7D840B15B6867500F4BE3D /* SRRemoveShortcutRollover.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = SRRemoveShortcutRollover.tif; sourceTree = "<group>"; };
@@ -149,6 +152,8 @@
 				DFE13A9615B66F5F009C6749 /* Supporting Files */,
 				DF2BBF3115B7C0F800A1E1C0 /* S3InputMenuManager.h */,
 				DF2BBF3215B7C0F800A1E1C0 /* S3InputMenuManager.m */,
+				DF6333F015CE01B40067DB88 /* S3HotkeyRegistration.h */,
+				DF6333F115CE01B40067DB88 /* S3HotkeyRegistration.m */,
 			);
 			path = OneKeyOneLanguage;
 			sourceTree = "<group>";
@@ -243,6 +248,7 @@
 				DF7D842015B6869200F4BE3D /* SRRecorderControl.m in Sources */,
 				DF7D842115B6869200F4BE3D /* SRValidator.m in Sources */,
 				DF2BBF3315B7C0F800A1E1C0 /* S3InputMenuManager.m in Sources */,
+				DF6333F215CE01B40067DB88 /* S3HotkeyRegistration.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
