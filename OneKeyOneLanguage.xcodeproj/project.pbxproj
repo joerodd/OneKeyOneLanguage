@@ -344,7 +344,10 @@
 				GCC_PREFIX_HEADER = "OneKeyOneLanguage/OneKeyOneLanguage-Prefix.pch";
 				INFOPLIST_FILE = "OneKeyOneLanguage/OneKeyOneLanguage-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				WARNING_CFLAGS = "-Weverything";
+				WARNING_CFLAGS = (
+					"-Weverything",
+					"-Wno-objc-missing-property-synthesis",
+				);
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -362,7 +365,10 @@
 				GCC_PREFIX_HEADER = "OneKeyOneLanguage/OneKeyOneLanguage-Prefix.pch";
 				INFOPLIST_FILE = "OneKeyOneLanguage/OneKeyOneLanguage-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				WARNING_CFLAGS = "-Weverything";
+				WARNING_CFLAGS = (
+					"-Weverything",
+					"-Wno-objc-missing-property-synthesis",
+				);
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
