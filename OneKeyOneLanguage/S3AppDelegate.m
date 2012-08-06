@@ -32,7 +32,9 @@
 }
 
 - (void)applicationDidBecomeActive:(NSNotification *)notification {
-    [[self window] makeKeyAndOrderFront:nil];
+    if ([[self window] isVisible] == NO) {
+        [[self window] makeKeyAndOrderFront:nil];
+    }
 }
 
 - (BOOL)shortcutRecorder:(SRRecorderControl *)aRecorder isKeyCode:(NSInteger)keyCode andFlagsTaken:(NSUInteger)flags reason:(NSString **)aReason {
@@ -58,6 +60,22 @@
 
 -(void)hotkeyPressed {
     TISSelectInputSource(_selectedInputSource);
+}
+
+- (IBAction)showLicensingInfo:(id)sender {
+    NSURL * licensingURL = [[NSBundle mainBundle] URLForResource:@"License" withExtension:@"rtf"];
+    NSData * licensingData = [NSData dataWithContentsOfURL:licensingURL];
+    NSAttributedString * bsdLicenseString = [[NSAttributedString alloc] initWithRTF:licensingData documentAttributes:nil];
+    
+    NSDictionary * aboutPanelOptions = @{
+    @"Credits" : bsdLicenseString,
+    @"ApplicationName" : @"Licensing Information",
+    @"Version" : @"",
+    @"ApplicationVersion": @"",
+    @"Copyright": @""
+    };
+    
+    [[NSApplication sharedApplication] orderFrontStandardAboutPanelWithOptions:aboutPanelOptions];
 }
 
 @end

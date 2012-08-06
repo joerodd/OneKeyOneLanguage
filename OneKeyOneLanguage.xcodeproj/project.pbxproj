@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DF2A436F15CF3D560012C994 /* License.rtf in Resources */ = {isa = PBXBuildFile; fileRef = DF2A436E15CF3D560012C994 /* License.rtf */; };
 		DF2BBF3315B7C0F800A1E1C0 /* S3InputMenuManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2BBF3215B7C0F800A1E1C0 /* S3InputMenuManager.m */; };
 		DF6333F215CE01B40067DB88 /* S3HotkeyRegistration.m in Sources */ = {isa = PBXBuildFile; fileRef = DF6333F115CE01B40067DB88 /* S3HotkeyRegistration.m */; };
 		DF7D840D15B6867500F4BE3D /* SRRemoveShortcut.tif in Resources */ = {isa = PBXBuildFile; fileRef = DF7D840915B6867500F4BE3D /* SRRemoveShortcut.tif */; };
@@ -28,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DF2A436E15CF3D560012C994 /* License.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = License.rtf; sourceTree = "<group>"; };
 		DF2BBF3115B7C0F800A1E1C0 /* S3InputMenuManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = S3InputMenuManager.h; sourceTree = "<group>"; };
 		DF2BBF3215B7C0F800A1E1C0 /* S3InputMenuManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = S3InputMenuManager.m; sourceTree = "<group>"; };
 		DF6333F015CE01B40067DB88 /* S3HotkeyRegistration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = S3HotkeyRegistration.h; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 				DFE13A9B15B66F5F009C6749 /* main.m */,
 				DFE13A9D15B66F5F009C6749 /* OneKeyOneLanguage-Prefix.pch */,
 				DFE13A9E15B66F5F009C6749 /* Credits.rtf */,
+				DF2A436E15CF3D560012C994 /* License.rtf */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -230,6 +233,7 @@
 				DF7D840E15B6867500F4BE3D /* SRRemoveShortcutPressed.tif in Resources */,
 				DF7D840F15B6867500F4BE3D /* SRRemoveShortcutRollover.tif in Resources */,
 				DF7D841015B6867500F4BE3D /* SRSnapback.tiff in Resources */,
+				DF2A436F15CF3D560012C994 /* License.rtf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -19,6 +19,8 @@
 @property (weak) IBOutlet NSMenu *inputSourceMenu;
 @property (weak) IBOutlet NSButton *selectedInputSourceButton;
 
+- (IBAction)showLicensingInfo:(id)sender;
+
 static OSStatus hotKeyEventHandler(EventHandlerCallRef inHandlerRef, EventRef event, void* refCon );
 
 @end
