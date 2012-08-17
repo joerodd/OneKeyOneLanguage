@@ -18,6 +18,7 @@
 @synthesize shortcutRecorder;
 @synthesize inputSourceMenu;
 @synthesize selectedInputSourceButton;
+@synthesize enableCheckbox;
 @synthesize window;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {

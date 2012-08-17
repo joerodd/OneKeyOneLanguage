@@ -18,6 +18,7 @@
 @property (weak) IBOutlet SRRecorderControl *shortcutRecorder;
 @property (weak) IBOutlet NSMenu *inputSourceMenu;
 @property (weak) IBOutlet NSButton *selectedInputSourceButton;
+@property (weak) IBOutlet NSButton *enableCheckbox;
 
 - (IBAction)showLicensingInfo:(id)sender;
 
