@@ -21,6 +21,9 @@ typedef void (^keypressHandler)(NSEvent*);
 {
     _registeredKeyCombo = keyCombo;
     keypressHandler myHandler = ^(NSEvent * event) {
+        if ([self enabled] == NO) {
+            return;
+        }
         unsigned short eventCode = [event keyCode];
         unsigned short registeredCode = _registeredKeyCombo.code;
         NSUInteger eventFlags = [event modifierFlags] & NSDeviceIndependentModifierFlagsMask;

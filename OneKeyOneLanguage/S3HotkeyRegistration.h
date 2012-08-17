@@ -18,6 +18,7 @@
 @interface S3HotkeyRegistration : NSObject
 
 @property (readwrite, strong) id <S3HotkeyDelegate> delegate;
+@property (readwrite, assign) BOOL enabled;
 
 -(BOOL)registerHotkey:(KeyCombo)keyCombo;
 

@@ -23,5 +23,6 @@
 - (IBAction)showLicensingInfo:(id)sender;
 
 static OSStatus hotKeyEventHandler(EventHandlerCallRef inHandlerRef, EventRef event, void* refCon );
+- (IBAction)toggleEnabledStatus:(id)sender;
 
 @end

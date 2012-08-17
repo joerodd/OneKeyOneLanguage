@@ -79,4 +79,7 @@
     [[NSApplication sharedApplication] orderFrontStandardAboutPanelWithOptions:aboutPanelOptions];
 }
 
+- (IBAction)toggleEnabledStatus:(id)sender {
+    [hotkeyRegistration setEnabled:(BOOL)[(NSButton*)sender state]];
+}
 @end
