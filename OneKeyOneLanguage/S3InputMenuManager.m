@@ -68,5 +68,16 @@ const NSUInteger kS3InputMenuManagerNumberOfSubmenus = 3;
 }
 
 
+-(TISInputSourceRef)inputSourceForName:(NSString*)inputSourceName {
+    for(int i=0; i < [allInputSources count]; ++i) {
+        TISInputSourceRef nextSource = (__bridge TISInputSourceRef)[allInputSources objectAtIndex:i];
+        NSString * nextInputName = CFBridgingRelease(TISGetInputSourceProperty(nextSource, kTISPropertyLocalizedName));
+        if ([nextInputName isEqualToString:inputSourceName]) {
+            return nextSource;
+        }
+    }
+    return NULL;
+}
+
 
 @end

@@ -21,5 +21,6 @@
 @property (readwrite, assign) BOOL enabled;
 
 -(BOOL)registerHotkey:(KeyCombo)keyCombo;
+-(BOOL)restoreHotkeyRegistrationForKeyCode:(NSNumber*)keyCode withFlags:(NSNumber*)modifierFlags;
 
 @end

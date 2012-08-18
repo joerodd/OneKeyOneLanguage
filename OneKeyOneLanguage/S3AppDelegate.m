@@ -8,6 +8,11 @@
 
 #import "S3AppDelegate.h"
 
+static const NSString * kS3InputSourceDefaultName = @"inputsourcedefaultname";
+static const NSString * kS3EnabledDefaultName = @"enablehotkeydefaultname";
+static const NSString * kS3HotkeyRegistrationFlagsDefaultName = @"hotkeyflags";
+static const NSString * kS3HotkeyRegistrationCodeDefaultName = @"hotkeycode";
+
 @implementation S3AppDelegate {
     NSArray * inputSources;
     S3InputMenuManager * inputMenuManager;
@@ -30,6 +35,35 @@
     [inputSourceMenu setDelegate:inputMenuManager];
     
     hotkeyRegistration = [[S3HotkeyRegistration alloc] init];
+    
+    //defrost the saved hotkey registration state, if it exists.
+    NSNumber * savedHotkeyCode = [[NSUserDefaults standardUserDefaults] objectForKey:(NSString *)kS3HotkeyRegistrationCodeDefaultName];
+    NSNumber * savedHotkeyFlags = [[NSUserDefaults standardUserDefaults] objectForKey:(NSString *)kS3HotkeyRegistrationFlagsDefaultName];
+    NSString * savedInputSource = [[NSUserDefaults standardUserDefaults] objectForKey:(NSString *)kS3InputSourceDefaultName];
+    NSNumber * savedEnableState = [[NSUserDefaults standardUserDefaults] objectForKey:(NSString *)kS3EnabledDefaultName];
+    //worth pointing out: even if there are defaults, if the old input source is no longer installed, we still just fail.
+    TISInputSourceRef restoredInputSource = NULL;
+    if (savedInputSource != nil) {
+        restoredInputSource = [inputMenuManager inputSourceForName:savedInputSource];
+    }
+    if (savedHotkeyCode != nil && savedHotkeyFlags != nil && restoredInputSource != NULL) {
+        //actually register the hotkey
+        [hotkeyRegistration restoreHotkeyRegistrationForKeyCode:savedHotkeyCode withFlags:savedHotkeyFlags];
+        
+        //set the value in the shortcut recorder
+        KeyCombo synthesizedKeyCombo;
+        synthesizedKeyCombo.code = [savedHotkeyCode intValue];
+        synthesizedKeyCombo.flags = [savedHotkeyFlags unsignedIntValue];
+        [shortcutRecorder setKeyCombo:synthesizedKeyCombo];
+        
+        //set the input source selection.
+        [selectedInputSourceButton setTitle:savedInputSource];
+        _selectedInputSource = restoredInputSource;
+        
+        //in this case, we actually don't care since if enabled isn't present,
+        //sending boolValue to nil will return false, which seems reasonable.
+        [hotkeyRegistration setEnabled:[savedEnableState boolValue]];
+    }
 }
 
 - (void)applicationDidBecomeActive:(NSNotification *)notification {
@@ -45,6 +79,12 @@
 - (void)shortcutRecorder:(SRRecorderControl *)aRecorder keyComboDidChange:(KeyCombo)newKeyCombo {
     [hotkeyRegistration setDelegate:self];
     [hotkeyRegistration registerHotkey:newKeyCombo];
+    //save the hotkey registration for defrosting later.
+    NSNumber * codeToSave = [NSNumber numberWithLong:newKeyCombo.code];
+    NSNumber * flagsToSave = [NSNumber numberWithUnsignedLong:newKeyCombo.flags];
+    [[NSUserDefaults standardUserDefaults] setObject:codeToSave forKey:(NSString*)kS3HotkeyRegistrationCodeDefaultName];
+    [[NSUserDefaults standardUserDefaults] setObject:flagsToSave forKey:(NSString*)kS3HotkeyRegistrationFlagsDefaultName];
+
 }
 
 - (IBAction)selectInputLanguage:(id)sender {
@@ -55,6 +95,7 @@
     _selectedInputSource = (__bridge TISInputSourceRef)([sender representedObject]);
     NSString * methodName = (__bridge NSString *)(TISGetInputSourceProperty(_selectedInputSource, kTISPropertyLocalizedName));
     [selectedInputSourceButton setTitle:methodName];
+    [[NSUserDefaults standardUserDefaults] setObject:methodName forKey:(NSString*)kS3InputSourceDefaultName];
 }
 
 #pragma mark - S3HotkeyDelegate implementation
@@ -80,6 +121,9 @@
 }
 
 - (IBAction)toggleEnabledStatus:(id)sender {
-    [hotkeyRegistration setEnabled:(BOOL)[(NSButton*)sender state]];
+    BOOL newState = (BOOL)[(NSButton*)sender state];
+    [hotkeyRegistration setEnabled:newState];
+    [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithBool:newState] forKey:(NSString*)kS3EnabledDefaultName];
 }
+
 @end

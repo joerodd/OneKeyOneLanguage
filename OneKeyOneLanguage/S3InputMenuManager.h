@@ -21,4 +21,7 @@
 
 @property (strong, readwrite) NSObject <S3InputMenuSelectionDelegate> * delegate;
 
+//attempts to return a TISInputSource with a given localizable name
+-(TISInputSourceRef)inputSourceForName:(NSString*)inputSourceName;
+
 @end

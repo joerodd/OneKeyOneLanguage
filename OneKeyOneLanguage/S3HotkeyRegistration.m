@@ -36,7 +36,14 @@ typedef void (^keypressHandler)(NSEvent*);
         }
     };
     hotkeyRegistration = [NSEvent addGlobalMonitorForEventsMatchingMask:NSKeyDownMask handler:myHandler];
-    return NO;
+    return (hotkeyRegistration != nil);
+}
+
+-(BOOL)restoreHotkeyRegistrationForKeyCode:(NSNumber*)keyCode withFlags:(NSNumber*)modifierFlags {
+    KeyCombo synthesizedKeyCombo;
+    synthesizedKeyCombo.flags = [modifierFlags unsignedIntValue];
+    synthesizedKeyCombo.code = [keyCode integerValue];
+    return [self registerHotkey:synthesizedKeyCombo];
 }
 
 @end
