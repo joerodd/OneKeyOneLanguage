@@ -29,5 +29,7 @@ static const NSString * kS3HotkeyRegistrationCodeDefaultName;
 
 static OSStatus hotKeyEventHandler(EventHandlerCallRef inHandlerRef, EventRef event, void* refCon );
 - (IBAction)toggleEnabledStatus:(id)sender;
+- (IBAction)closeWindow:(id)sender;
+- (IBAction)revealWindow:(id)sender;
 
 @end

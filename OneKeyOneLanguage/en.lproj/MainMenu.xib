@@ -151,10 +151,20 @@
 						<object class="NSMenu" key="NSSubmenu" id="835318025">
 							<string key="NSTitle">Window</string>
 							<array class="NSMutableArray" key="NSMenuItems">
+								<object class="NSMenuItem" id="585864959">
+									<reference key="NSMenu" ref="835318025"/>
+									<string key="NSTitle">Close</string>
+									<string key="NSKeyEquiv">w</string>
+									<int key="NSKeyEquivModMask">1048576</int>
+									<int key="NSMnemonicLoc">2147483647</int>
+									<reference key="NSOnImage" ref="35465992"/>
+									<reference key="NSMixedImage" ref="502551668"/>
+								</object>
 								<object class="NSMenuItem" id="554305505">
 									<reference key="NSMenu" ref="835318025"/>
-									<string key="NSTitle">Main Window</string>
-									<string key="NSKeyEquiv"/>
+									<string key="NSTitle">Singleshot</string>
+									<string key="NSKeyEquiv">1</string>
+									<int key="NSKeyEquivModMask">1048576</int>
 									<int key="NSMnemonicLoc">2147483647</int>
 									<reference key="NSOnImage" ref="35465992"/>
 									<reference key="NSMixedImage" ref="502551668"/>
@@ -195,7 +205,7 @@
 				<int key="NSWindowBacking">2</int>
 				<string key="NSWindowRect">{{335, 390}, {639, 54}}</string>
 				<int key="NSWTFlags">1954021376</int>
-				<string key="NSWindowTitle">OneKeyOneLanguage</string>
+				<string key="NSWindowTitle">Singleshot</string>
 				<string key="NSWindowClass">NSWindow</string>
 				<nil key="NSViewClass"/>
 				<nil key="NSUserInterfaceItemIdentifier"/>
@@ -460,6 +470,22 @@
 					</object>
 					<int key="connectionID">595</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">closeWindow:</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="585864959"/>
+					</object>
+					<int key="connectionID">597</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">revealWindow:</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="554305505"/>
+					</object>
+					<int key="connectionID">598</int>
+				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<array key="orderedObjects">
@@ -568,6 +594,7 @@
 						<reference key="object" ref="835318025"/>
 						<array class="NSMutableArray" key="children">
 							<reference ref="554305505"/>
+							<reference ref="585864959"/>
 						</array>
 						<reference key="parent" ref="713487014"/>
 					</object>
@@ -892,6 +919,11 @@
 						<reference key="object" ref="649415450"/>
 						<reference key="parent" ref="391911495"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">596</int>
+						<reference key="object" ref="585864959"/>
+						<reference key="parent" ref="835318025"/>
+					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
@@ -955,12 +987,13 @@
 				<string key="588.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="589.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="591.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="596.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 			</dictionary>
 			<dictionary class="NSMutableDictionary" key="unlocalizedProperties"/>
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">595</int>
+			<int key="maxID">598</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -976,10 +1009,25 @@
 					<string key="className">S3AppDelegate</string>
 					<string key="superclassName">NSObject</string>
 					<dictionary class="NSMutableDictionary" key="actions">
+						<string key="closeWindow:">id</string>
+						<string key="revealWindow:">id</string>
+						<string key="selectInputLanguage:">id</string>
 						<string key="showLicensingInfo:">id</string>
 						<string key="toggleEnabledStatus:">id</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="actionInfosByName">
+						<object class="IBActionInfo" key="closeWindow:">
+							<string key="name">closeWindow:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="revealWindow:">
+							<string key="name">revealWindow:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="selectInputLanguage:">
+							<string key="name">selectInputLanguage:</string>
+							<string key="candidateClassName">id</string>
+						</object>
 						<object class="IBActionInfo" key="showLicensingInfo:">
 							<string key="name">showLicensingInfo:</string>
 							<string key="candidateClassName">id</string>

@@ -66,12 +66,11 @@ static const NSString * kS3HotkeyRegistrationCodeDefaultName = @"hotkeycode";
         //sending boolValue to nil will return false, which seems reasonable.
         [hotkeyRegistration setEnabled:[savedEnableState boolValue]];
     }
+    [[self window] makeMainWindow];
 }
 
 - (void)applicationDidBecomeActive:(NSNotification *)notification {
-    if ([[self window] isVisible] == NO) {
-        [[self window] makeKeyAndOrderFront:nil];
-    }
+    [self revealWindow:self];
 }
 
 - (BOOL)shortcutRecorder:(SRRecorderControl *)aRecorder isKeyCode:(NSInteger)keyCode andFlagsTaken:(NSUInteger)flags reason:(NSString **)aReason {
@@ -128,8 +127,14 @@ static const NSString * kS3HotkeyRegistrationCodeDefaultName = @"hotkeycode";
     [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithBool:newState] forKey:(NSString*)kS3EnabledDefaultName];
 }
 
-- (IBAction)showHelp:(id)sender {
-    NSLog(@"Well here we go");
+- (IBAction)closeWindow:(id)sender {
+    [[self window] close];
+}
+
+- (IBAction)revealWindow:(id)sender {
+    if ([[self window] isVisible] == NO) {
+        [[self window] makeKeyAndOrderFront:nil];
+    }
 }
 
 @end
