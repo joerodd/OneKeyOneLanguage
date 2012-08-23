@@ -65,6 +65,7 @@ static const NSString * kS3HotkeyRegistrationCodeDefaultName = @"hotkeycode";
         //in this case, we actually don't care since if enabled isn't present,
         //sending boolValue to nil will return false, which seems reasonable.
         [hotkeyRegistration setEnabled:[savedEnableState boolValue]];
+        [enableCheckbox setState:[savedEnableState integerValue]];
     }
     [[self window] makeMainWindow];
 }
@@ -85,6 +86,7 @@ static const NSString * kS3HotkeyRegistrationCodeDefaultName = @"hotkeycode";
     NSNumber * flagsToSave = [NSNumber numberWithUnsignedLong:newKeyCombo.flags];
     [[NSUserDefaults standardUserDefaults] setObject:codeToSave forKey:(NSString*)kS3HotkeyRegistrationCodeDefaultName];
     [[NSUserDefaults standardUserDefaults] setObject:flagsToSave forKey:(NSString*)kS3HotkeyRegistrationFlagsDefaultName];
+    [self toggleEnabledStatus:enableCheckbox];
 
 }
 
@@ -97,6 +99,7 @@ static const NSString * kS3HotkeyRegistrationCodeDefaultName = @"hotkeycode";
     NSString * methodName = (__bridge NSString *)(TISGetInputSourceProperty(_selectedInputSource, kTISPropertyLocalizedName));
     [selectedInputSourceButton setTitle:methodName];
     [[NSUserDefaults standardUserDefaults] setObject:methodName forKey:(NSString*)kS3InputSourceDefaultName];
+    [self toggleEnabledStatus:enableCheckbox];
 }
 
 #pragma mark - S3HotkeyDelegate implementation
