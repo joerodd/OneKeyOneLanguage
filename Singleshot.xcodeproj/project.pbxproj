@@ -355,7 +355,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OneKeyOneLanguage/Singleshot-Prefix.pch";
 				INFOPLIST_FILE = "OneKeyOneLanguage/Singleshot-Info.plist";
-				PRODUCT_NAME = SingleshotBeta;
+				PRODUCT_NAME = Singleshot;
 				WARNING_CFLAGS = (
 					"-Weverything",
 					"-Wno-objc-missing-property-synthesis",
@@ -376,7 +376,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OneKeyOneLanguage/Singleshot-Prefix.pch";
 				INFOPLIST_FILE = "OneKeyOneLanguage/Singleshot-Info.plist";
-				PRODUCT_NAME = SingleshotBeta;
+				PRODUCT_NAME = Singleshot;
 				WARNING_CFLAGS = (
 					"-Weverything",
 					"-Wno-objc-missing-property-synthesis",
