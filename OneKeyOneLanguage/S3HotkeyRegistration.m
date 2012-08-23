@@ -1,6 +1,6 @@
 //
 //  S3HotkeyRegistration.m
-//  OneKeyOneLanguage
+//  Singleshot
 //
 //  Created by Michael Herring on 8/4/12.
 //  Copyright (c) 2012 Sun, Sea and Sky Factory. All rights reserved.

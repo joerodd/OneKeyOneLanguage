@@ -1,6 +1,6 @@
 //
 //  S3AppDelegate.m
-//  OneKeyOneLanguage
+//  Singleshot
 //
 //  Created by Michael Herring on 7/17/12.
 //  Copyright (c) 2012 Sun, Sea and Sky Factory. All rights reserved.
