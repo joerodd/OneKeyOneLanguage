@@ -27,6 +27,8 @@ static const NSString * kS3HotkeyRegistrationCodeDefaultName = @"hotkeycode";
 @synthesize window;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
+    //register help book
+    AHRegisterHelpBookWithURL((__bridge CFURLRef)([[NSBundle mainBundle] pathForResource:@"Singleshot" ofType:@"help"]));
     [[self shortcutRecorder] setDelegate:self];
     [[self shortcutRecorder] setCanCaptureGlobalHotKeys:YES];
     [[self shortcutRecorder] setAllowsKeyOnly:YES escapeKeysRecord:NO];
@@ -124,6 +126,10 @@ static const NSString * kS3HotkeyRegistrationCodeDefaultName = @"hotkeycode";
     BOOL newState = (BOOL)[(NSButton*)sender state];
     [hotkeyRegistration setEnabled:newState];
     [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithBool:newState] forKey:(NSString*)kS3EnabledDefaultName];
+}
+
+- (IBAction)showHelp:(id)sender {
+    NSLog(@"Well here we go");
 }
 
 @end
