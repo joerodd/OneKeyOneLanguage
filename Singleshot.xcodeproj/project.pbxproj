@@ -53,7 +53,7 @@
 		DF7D841A15B6869200F4BE3D /* SRRecorderControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRRecorderControl.m; sourceTree = "<group>"; };
 		DF7D841B15B6869200F4BE3D /* SRValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRValidator.h; sourceTree = "<group>"; };
 		DF7D841C15B6869200F4BE3D /* SRValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRValidator.m; sourceTree = "<group>"; };
-		DFE13A8B15B66F5F009C6749 /* SingleshotBeta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = SingleshotBeta.app; path = Singleshot.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DFE13A8B15B66F5F009C6749 /* Singleshot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Singleshot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFE13A8F15B66F5F009C6749 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		DFE13A9215B66F5F009C6749 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		DFE13A9315B66F5F009C6749 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -125,7 +125,7 @@
 		DFE13A8C15B66F5F009C6749 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DFE13A8B15B66F5F009C6749 /* SingleshotBeta.app */,
+				DFE13A8B15B66F5F009C6749 /* Singleshot.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -197,7 +197,7 @@
 			);
 			name = Singleshot;
 			productName = OneKeyOneLanguage;
-			productReference = DFE13A8B15B66F5F009C6749 /* SingleshotBeta.app */;
+			productReference = DFE13A8B15B66F5F009C6749 /* Singleshot.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
